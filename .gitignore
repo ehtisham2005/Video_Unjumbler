@@ -1,0 +1,16 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Output folders and temporary frames
+frames/
+ordered_frames/
+output/
+
+# VS Code settings
+.vscode/
