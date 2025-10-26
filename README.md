@@ -8,29 +8,11 @@ It is a camera movement kind of heavy motion work kind of thing.
 
 ## Why I Used Optical Flow and Then Came Back to SSIM
 
-The beginning was the easiest: just use the most renowned
+At first, things seemed simple. I decided to start with  Optical Flow method to track how pixels move from one frame to the next, thought it would help me piece the frames back together in the right order. It gave me an output with few frames out of order.
 
-**Optical Flow**
+But real-world videos aren’t always that perfect. Sometimes the camera shakes, or there’s barely any motion at all. In those situations, Optical Flow struggled to find the right sequence because the movement wasn’t clear enough to follow.
 
-method to see how pixels move from one image to another and then deduce the correct sequence based on the continuous movement of the object. The technique gave excellent results for videos with one
-
-clear
-
-and
-
-consistent
-
-movement.
-
-But, actual videos are not always that great. Sometimes the camera shakes, or minimal motion or repetitive backgrounds may be there. In such instances, Optical Flow could hardly do the job—it was not always capable of identifying the next frame.
-
-Thus, I decided to work with the
-
-SSIM (Structural Similarity Index Measure)
-
-once again.
-
-Compared to Optical Flow, SSIM is not dependent on motion; rather, it considers overall visual similarity—contrast, brightness, and structure. By integrating SSIM with Optical Flow, I was able to extend the possibilities of the latter. In the end, the combination yielded more fluent and visually consistent reconstructions.
+That’s when I turned to SSIM (Structural Similarity Index Measure). Unlike Optical Flow, SSIM doesn’t depend on motion; it compares frames based on how similar they look in terms of brightness, contrast, and structure. By combining both methods, I managed to get results that were smoother and more natural — the reconstructed videos looked far closer to the original sequence, even in tricky situations.
 
 ***
 
@@ -123,17 +105,17 @@ FrameOrder/
 
 │
 
-├── input_video/ # Where you put the videos that need fixing
+├── input_video/ # place the input video here
 
-├── frames/ # Frames extracted from a jumbled video
+├── frames/ # Frames that are extracted from input video
 
-├── ordered_frames/ # Frames are in the correct order
+├── ordered_frames/ # Ordered frames are placed here
 
-├── output/ # Video after being reconstructed
+├── output/ # Output is given here
 
-├── main.py # Frame extraction code
+├── extract.py # Frame extraction code
 
-├── reorder.py # Frame reordering and video creating code
+├── reorder.py # Frames are ordered and stitched here
 
 └── README.md # This ​‍​‌‍​‍‌​‍​‌‍​‍‌file
 
