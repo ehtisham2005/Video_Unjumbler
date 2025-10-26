@@ -85,15 +85,15 @@ pip install opencv-python scikit-image numpy
 
 ```
 
-That's everything. Your setup is ready for launching the project.
+Your setup is ready for launching the project.
 
 ***
 
 ## How to Use
 
-1. Put the video with the frames you want to reorder, in the folder called "input_video/".
+1. Put the video with the frames you want to reorder, in the folder called "input_video/"(as input.mp4).
 
-2. Go ahead and execute the frame grabbing code:
+2. Go ahead and execute the frame grabbing code(extract.py):
 
 ```
 
